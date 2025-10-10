@@ -17,7 +17,9 @@ jobs:
           cache: npm
 
       - name: Build the project
-        run: npm run build
+        run: |
+          npm ci 
+          npm run build
 
       - name: SSH auth & known_hosts
         run: |
