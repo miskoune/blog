@@ -21,7 +21,7 @@ jobs:
           npm ci 
           npm run build
 
-      - name: SSH auth & known_hosts
+      - name: SSH auth
         run: |
           eval "$(ssh-agent -s)"
           ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
