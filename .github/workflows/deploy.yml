@@ -34,11 +34,11 @@ jobs:
             -o IdentitiesOnly=yes -o BatchMode=yes \
             "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" "echo OK && whoami && pwd"
 
-      - name: Sync dist/ to VPS (overwrite, delete stale)
+      - name: Sync dist/ to VPS (delete stale)
         run: |
           rsync -az --delete \
-            -e "ssh -p ${{ secrets.VPS_PORT }}" \
-            "dist/" \
+            -e "ssh -i ~/.ssh/ci_key -p ${{ secrets.VPS_PORT }} -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            dist/ \
             "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.DEPLOY_PATH }}/"
 
       - name: Reload Nginx
