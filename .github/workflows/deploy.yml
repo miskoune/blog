@@ -40,9 +40,3 @@ jobs:
             -e "ssh -i ~/.ssh/ci_key -p ${{ secrets.VPS_PORT }} -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             dist/ \
             "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.DEPLOY_PATH }}/"
-
-      - name: Reload Nginx
-        run: |
-          ssh -p "${{ secrets.VPS_PORT }}" \
-            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" \
-            "sudo systemctl reload nginx"
