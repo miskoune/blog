@@ -24,19 +24,13 @@ jobs:
       - name: SSH auth
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/ci_key
+          echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/ci_key
           chmod 600 ~/.ssh/ci_key
-          ssh-keyscan -p "${{ secrets.VPS_PORT }}" "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -p "${{ secrets.PORT }}" "${{ secrets.HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Test SSH auth
-        run: |
-          ssh -vvv -i ~/.ssh/ci_key -p "${{ secrets.VPS_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes \
-            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" "echo OK && whoami && pwd"
-
-      - name: Sync dist/ to VPS (delete stale)
+      - name: Deploy to production
         run: |
           rsync -az --delete \
-            -e "ssh -i ~/.ssh/ci_key -p ${{ secrets.VPS_PORT }} -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            -e "ssh -i ~/.ssh/ci_key -p ${{ secrets.PORT }} -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             dist/ \
-            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.DEPLOY_PATH }}/"
+            "${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.DEPLOY_PATH }}/"
