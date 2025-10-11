@@ -23,10 +23,16 @@ jobs:
 
       - name: SSH auth
         run: |
-          eval "$(ssh-agent -s)"
-          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
           mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/ci_key
+          chmod 600 ~/.ssh/ci_key
           ssh-keyscan -p "${{ secrets.VPS_PORT }}" "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Test SSH auth
+        run: |
+          ssh -vvv -i ~/.ssh/ci_key -p "${{ secrets.VPS_PORT }}" \
+            -o IdentitiesOnly=yes -o BatchMode=yes \
+            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" "echo OK && whoami && pwd"
 
       - name: Sync dist/ to VPS (overwrite, delete stale)
         run: |
