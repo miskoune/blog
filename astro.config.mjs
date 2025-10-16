@@ -1,3 +1,11 @@
 import { defineConfig } from 'astro/config';
 
-export default defineConfig({ site: 'https://miskoune.com' });
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  site: 'https://miskoune.com',
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
+});
