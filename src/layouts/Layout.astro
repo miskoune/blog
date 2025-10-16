@@ -16,6 +16,11 @@ const CANONICAL_URL  = new URL(Astro.url.pathname, Astro.site).href;
 		<title>Moussa Isk - Product Engineer</title>
 	</head>
 	<body>
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
+    </div>
 		<slot />
 	</body>
 </html>
