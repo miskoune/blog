@@ -1,6 +1,7 @@
 ---
-const CANONICAL_URL  = new URL(Astro.url.pathname, Astro.site).href;
 import "../styles/global.css";
+
+const CANONICAL_URL  = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -10,8 +11,9 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={CANONICAL_URL} />
+    <link rel="preload" href="/fonts/Inter.ttf" as="font" type="font/ttf" crossorigin>
 		<meta name="generator" content={Astro.generator} />
-		<title>Moussa Isk - Software Engineer</title>
+		<title>Moussa Isk - Product Engineer</title>
 	</head>
 	<body>
 		<slot />
