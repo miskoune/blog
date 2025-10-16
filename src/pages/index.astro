@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Button from '../components/Button.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<div class="max-w-2xl lg:max-w-xl mx-auto font-inter">
+
+  <header class="flex justify-end my-8 md:my-16 mx-4">
+    <nav class="flex gap-4">
+      <a href="/experience">xp</a>
+      <a href="/projects">apps</a>
+      <a href="/articles">writings</a>
+    </nav>
+  </header>
+
+  <main class="mx-4">
+    <section>
+      <h1 class="text-2xl font-bold">Bonjour, I'm Moussa.</h1>
+      <p class="text-gray-500 text-lg block mb-4">Product Engineer based in Paris.</p>
+       <p class="mb-4">I'm designing and building products that help solo founders and small businesses scale and shine. ✨</p>
+       
+       <Button text="about me" href="/experience" />
+       
+       <div class="flex items-center justify-center my-8">
+         <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+         <div class="mx-4 w-2 h-2 bg-gray-400 rounded-full"></div>
+         <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+       </div>
+       
+    </section>
+  </main>
+
+  </div>
 </Layout>
