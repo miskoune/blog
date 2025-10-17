@@ -2,34 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import image1 from '../assets/images/image1.jpg';
 import image2 from '../assets/images/image2.jpg';
-import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
+import killerpartyLogo from '../assets/images/killerparty/killerparty-logo.png';
+import Separator from '../components/Separator.astro';
 ---
 
 <Layout>
-  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-inter">
-    <div class="max-w-6xl mx-auto px-4 py-8 md:py-16">
-      
-      <!-- Header -->
-      <header class="flex justify-between items-center mb-16">
-        <div class="text-sm font-medium text-gray-600 tracking-wide">
-          MOUSSA ISK
-        </div>
-        <nav class="flex gap-6">
-          <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Home</a>
-          <a href="/experience" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Experience</a>
-          <a href="/articles" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Articles</a>
-        </nav>
-      </header>
+    <div class="max-w-6xl mx-auto px-4">
 
       <!-- Page Title -->
       <div class="text-center mb-16">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Mobile <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Apps</span>
+          <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">apps</span>
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Crafting immersive mobile experiences that bring games and stories to life
+          Last mobile apps I've worked on
         </p>
       </div>
+
+      <Separator />
 
       <!-- KillerParty Featured Project -->
       <section class="mb-20">
@@ -115,19 +105,6 @@ import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
                 <div class="w-8 h-8 bg-gradient-to-r from-red-500/30 to-purple-500/30 rounded-full blur-sm animate-pulse"></div>
               </div>
               
-              <!-- Desktop captions below -->
-              <div class="hidden md:block absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center">
-                <div class="flex gap-8">
-                  <div class="text-center">
-                    <p class="text-gray-400 text-sm font-medium">Game Lobby</p>
-                    <p class="text-gray-500 text-xs">Setup & Join</p>
-                  </div>
-                  <div class="text-center">
-                    <p class="text-gray-400 text-sm font-medium">Game Statistics</p>
-                    <p class="text-gray-500 text-xs">Live Progress</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -177,7 +154,7 @@ import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
             <!-- Right Column - Tech Stack & Links -->
             <div class="space-y-8">
               <div>
-                <h3 class="text-2xl font-bold text-white mb-4">Technologies</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">Tech stack</h3>
                 <div class="flex flex-wrap gap-3">
                   <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">React Native</span>
                   <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">TypeScript</span>
@@ -198,7 +175,7 @@ import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
                       </svg>
                     </div>
                     <div>
-                      <div class="text-white font-semibold">Visit KillerParty</div>
+                      <div class="text-white font-semibold">Visit Website</div>
                       <div class="text-gray-400 text-sm">killerparty.app</div>
                     </div>
                     <svg class="w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-transform duration-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,8 +185,8 @@ import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
                   
                   <!-- Apple Store Download Link -->
                   <a href="https://apps.apple.com/fr/app/killerparty/id6468843961" target="_blank" class="group flex items-center gap-3 p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 border border-gray-700">
-                    <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <img src={appleStoreSvg.src} alt="Download on the App Store" class="w-6 h-6" />
+                    <div class="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <img src={killerpartyLogo.src} alt="KillerParty Logo" class="w-full h-full object-cover" />
                     </div>
                     <div>
                       <div class="text-white font-semibold">Download on App Store</div>
@@ -232,35 +209,7 @@ import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
           <h2 class="text-3xl font-bold text-gray-900 mb-4">More Projects</h2>
           <p class="text-gray-600">Coming soon - more mobile applications and digital experiences</p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Placeholder for future projects -->
-          <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center mb-4">
-              <span class="text-gray-500 text-2xl">🚀</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Project Coming Soon</h3>
-            <p class="text-gray-600">Stay tuned for more exciting mobile applications</p>
-          </div>
-          
-          <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center mb-4">
-              <span class="text-gray-500 text-2xl">💡</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation in Progress</h3>
-            <p class="text-gray-600">Working on the next breakthrough mobile experience</p>
-          </div>
-          
-          <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center mb-4">
-              <span class="text-gray-500 text-2xl">🎯</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Future Vision</h3>
-            <p class="text-gray-600">Exploring new possibilities in mobile development</p>
-          </div>
-        </div>
       </section>
 
     </div>
-  </div>
 </Layout>
