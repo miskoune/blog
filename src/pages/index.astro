@@ -1,35 +1,128 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import Separator from '../components/Separator.astro';
+import image1 from '../assets/images/image1.jpg';
+import image2 from '../assets/images/image2.jpg';
+import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
 ---
 
 <Layout>
-	<div class="max-w-2xl lg:max-w-xl mx-auto font-inter">
-
-  <header class="flex justify-end my-8 md:my-16 mx-4">
-    <nav class="flex gap-4">
-      <a href="/experience">xp</a>
-      <a href="/projects">apps</a>
-      <a href="/articles">writings</a>
-    </nav>
-  </header>
-
-  <main class="mx-4">
-    <section>
+    <section class="max-w-2xl lg:max-w-xl mx-auto font-inter">
       <h1 class="text-2xl font-bold">Bonjour, I'm Moussa.</h1>
       <p class="text-gray-500 text-lg block mb-4">Product Engineer based in Paris.</p>
-       <p class="mb-4">I'm designing and building products that help solo founders and small businesses scale and shine. ✨</p>
-       
-       <Button text="about me" href="/experience" />
-       
-       <div class="flex items-center justify-center my-8">
-         <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-         <div class="mx-4 w-2 h-2 bg-gray-400 rounded-full"></div>
-         <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-       </div>
-       
+      <p class="mb-4">I'm designing and building products that help solo founders and small businesses scale and shine. ✨</p>
+      <Button text="about me" href="/experience" />
+      <Separator />
     </section>
-  </main>
+    <section class="mt-16 lg:max-w-4xl mx-auto font-inter">
+      <!-- KillerParty Project Section -->
+      <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-gray-800/50 shadow-2xl">
+        <div class="flex flex-col lg:flex-row gap-8 items-center">
+          <!-- Project Info -->
+          <div class="flex-1 space-y-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+              <span class="text-sm font-medium text-gray-400 tracking-wide uppercase">Latest Work</span>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-white mb-4">
+              <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">KillerParty</span>
+              <br />
+              <span class="text-gray-300 text-xl">Mobile App</span>
+            </h2>
+            
+            <p class="text-gray-200">
+              Immersive role-playing game platform that brings mystery and intrigue to mobile gaming. 
+              Designed and developed key features focusing on intuitive UX and seamless gameplay experience.
+            </p>
+            
+            <div class="flex flex-wrap gap-3">
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">React Native</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Mobile Game</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Real-time Multiplayer</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Survival</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <Button text="Website" href="https://killerparty.app" variant="secondary" newTab={true} />
+              
+              <!-- Apple Store Download Button -->
+              <a href="https://apps.apple.com/fr/app/killerparty/id6468843961" target="_blank" class="flex items-center justify-center py-1 hover:drop-shadow-lg rounded-lg">
+                <img class="h-17" src={appleStoreSvg.src} alt="Download on the App Store" class="h-20 w-auto" />  
+              </a>
+            </div>
+          </div>
+          
+          <!-- Visual Element -->
+          <div class="flex-1 flex justify-center">
+            <div class="relative group">
+              <!-- Container for both phones - Responsive -->
+              <div class="flex flex-col md:flex-row gap-6 md:gap-4 items-center">
+                <!-- Screenshot 1 - Game Lobby -->
+                <div class="relative">
+                  <!-- Phone Frame - Responsive sizing -->
+                  <div class="w-48 md:w-56 h-[400px] md:h-[450px] bg-gray-800 rounded-3xl p-2 shadow-2xl border border-gray-700 transform group-hover:scale-105 transition-transform duration-500">
+                    <!-- Real App Screenshot -->
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                      <img 
+                        src={image1.src} 
+                        alt="KillerParty App - Game Lobby Screen" 
+                        class="w-full h-full object-cover"
+                      />
+                      <!-- Subtle overlay for better integration -->
+                      <div class="absolute inset-0 bg-black/10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Floating elements -->
+                  <div class="absolute -top-3 -right-3 w-6 h-6 bg-red-500/20 rounded-full blur-sm animate-pulse"></div>
+                  <div class="absolute -bottom-3 -left-3 w-4 h-4 bg-pink-500/20 rounded-full blur-sm animate-pulse" style="animation-delay: 1s;"></div>
+                  
+                  <!-- Mobile caption -->
+                  <div class="md:hidden mt-4 text-center">
+                    <p class="text-gray-400 text-sm font-medium">Game Lobby</p>
+                    <p class="text-gray-500 text-xs">Setup & Join</p>
+                  </div>
+                </div>
 
-  </div>
+                <!-- Screenshot 2 - Game Statistics -->
+                <div class="relative">
+                  <!-- Phone Frame - Responsive sizing -->
+                  <div class="w-48 md:w-56 h-[400px] md:h-[450px] bg-gray-800 rounded-3xl p-2 shadow-2xl border border-gray-700 transform group-hover:scale-105 transition-transform duration-500">
+                    <!-- Real App Screenshot -->
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                      <img 
+                        src={image2.src} 
+                        alt="KillerParty App - Game Statistics Screen" 
+                        class="w-full h-full object-cover"
+                      />
+                      <!-- Subtle overlay for better integration -->
+                      <div class="absolute inset-0 bg-black/10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Floating elements -->
+                  <div class="absolute -top-3 -left-3 w-6 h-6 bg-purple-500/20 rounded-full blur-sm animate-pulse"></div>
+                  <div class="absolute -bottom-3 -right-3 w-4 h-4 bg-blue-500/20 rounded-full blur-sm animate-pulse" style="animation-delay: 0.5s;"></div>
+                  
+                  <!-- Mobile caption -->
+                  <div class="md:hidden mt-4 text-center">
+                    <p class="text-gray-400 text-sm font-medium">Game Statistics</p>
+                    <p class="text-gray-500 text-xs">Live Progress</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Central floating elements - Desktop only -->
+              <div class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div class="w-8 h-8 bg-gradient-to-r from-red-500/30 to-purple-500/30 rounded-full blur-sm animate-pulse"></div>
+              </div>
+              
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </Layout>

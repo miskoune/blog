@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import image1 from '../assets/images/image1.jpg';
+import image2 from '../assets/images/image2.jpg';
+import appleStoreSvg from '../assets/images/killerparty/apple-store.svg';
+---
+
+<Layout>
+  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-inter">
+    <div class="max-w-6xl mx-auto px-4 py-8 md:py-16">
+      
+      <!-- Header -->
+      <header class="flex justify-between items-center mb-16">
+        <div class="text-sm font-medium text-gray-600 tracking-wide">
+          MOUSSA ISK
+        </div>
+        <nav class="flex gap-6">
+          <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Home</a>
+          <a href="/experience" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Experience</a>
+          <a href="/articles" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Articles</a>
+        </nav>
+      </header>
+
+      <!-- Page Title -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Mobile <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Apps</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Crafting immersive mobile experiences that bring games and stories to life
+        </p>
+      </div>
+
+      <!-- KillerParty Featured Project -->
+      <section class="mb-20">
+        <div class="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12 border border-gray-800/50 shadow-2xl">
+          
+          <!-- Project Header -->
+          <div class="text-center mb-12">
+            <div class="flex items-center justify-center gap-3 mb-6">
+              <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+              <span class="text-sm font-medium text-gray-400 tracking-wide uppercase">Featured Project</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">KillerParty</span>
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+              Immersive survival game platform that brings mystery and intrigue to mobile gaming
+            </p>
+          </div>
+
+          <!-- App Screenshots - Responsive Layout -->
+          <div class="flex justify-center mb-12">
+            <div class="relative group">
+              <!-- Container for both phones - Responsive -->
+              <div class="flex flex-col md:flex-row gap-6 md:gap-4 items-center">
+                <!-- Screenshot 1 - Game Lobby -->
+                <div class="relative">
+                  <!-- Phone Frame - Responsive sizing -->
+                  <div class="w-64 md:w-72 h-[500px] md:h-[580px] bg-gray-800 rounded-3xl p-2 shadow-2xl border border-gray-700 transform group-hover:scale-105 transition-transform duration-500">
+                    <!-- Real App Screenshot -->
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                      <img 
+                        src={image1.src} 
+                        alt="KillerParty App - Game Lobby Screen" 
+                        class="w-full h-full object-cover"
+                      />
+                      <!-- Subtle overlay for better integration -->
+                      <div class="absolute inset-0 bg-black/10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Floating elements -->
+                  <div class="absolute -top-3 -right-3 w-6 h-6 bg-red-500/20 rounded-full blur-sm animate-pulse"></div>
+                  <div class="absolute -bottom-3 -left-3 w-4 h-4 bg-pink-500/20 rounded-full blur-sm animate-pulse" style="animation-delay: 1s;"></div>
+                  
+                  <!-- Mobile caption -->
+                  <div class="md:hidden mt-4 text-center">
+                    <p class="text-gray-400 text-sm font-medium">Game Lobby</p>
+                    <p class="text-gray-500 text-xs">Setup & Join</p>
+                  </div>
+                </div>
+
+                <!-- Screenshot 2 - Game Statistics -->
+                <div class="relative">
+                  <!-- Phone Frame - Responsive sizing -->
+                  <div class="w-64 md:w-72 h-[500px] md:h-[580px] bg-gray-800 rounded-3xl p-2 shadow-2xl border border-gray-700 transform group-hover:scale-105 transition-transform duration-500">
+                    <!-- Real App Screenshot -->
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                      <img 
+                        src={image2.src} 
+                        alt="KillerParty App - Game Statistics Screen" 
+                        class="w-full h-full object-cover"
+                      />
+                      <!-- Subtle overlay for better integration -->
+                      <div class="absolute inset-0 bg-black/10"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Floating elements -->
+                  <div class="absolute -top-3 -left-3 w-6 h-6 bg-purple-500/20 rounded-full blur-sm animate-pulse"></div>
+                  <div class="absolute -bottom-3 -right-3 w-4 h-4 bg-blue-500/20 rounded-full blur-sm animate-pulse" style="animation-delay: 0.5s;"></div>
+                  
+                  <!-- Mobile caption -->
+                  <div class="md:hidden mt-4 text-center">
+                    <p class="text-gray-400 text-sm font-medium">Game Statistics</p>
+                    <p class="text-gray-500 text-xs">Live Progress</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Central floating elements - Desktop only -->
+              <div class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div class="w-8 h-8 bg-gradient-to-r from-red-500/30 to-purple-500/30 rounded-full blur-sm animate-pulse"></div>
+              </div>
+              
+              <!-- Desktop captions below -->
+              <div class="hidden md:block absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center">
+                <div class="flex gap-8">
+                  <div class="text-center">
+                    <p class="text-gray-400 text-sm font-medium">Game Lobby</p>
+                    <p class="text-gray-500 text-xs">Setup & Join</p>
+                  </div>
+                  <div class="text-center">
+                    <p class="text-gray-400 text-sm font-medium">Game Statistics</p>
+                    <p class="text-gray-500 text-xs">Live Progress</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Details -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Column - Description -->
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-4">About the Project</h3>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                  KillerParty is an immersive mobile survival game that brings the classic "killer" party game to the digital world. 
+                  Players join private game rooms, complete missions, and try to eliminate others while avoiding detection.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                  The app features real-time multiplayer gameplay, custom avatars, mission systems, and a dark, atmospheric UI 
+                  that enhances the mysterious and thrilling experience.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-4">Key Features</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-500 mt-1">•</span>
+                    <span class="text-gray-300">Real-time multiplayer game rooms</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-500 mt-1">•</span>
+                    <span class="text-gray-300">Custom avatar system with unique characters</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-500 mt-1">•</span>
+                    <span class="text-gray-300">Mission-based gameplay mechanics</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-500 mt-1">•</span>
+                    <span class="text-gray-300">Dark mode UI with atmospheric design</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-500 mt-1">•</span>
+                    <span class="text-gray-300">Game statistics and player tracking</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Right Column - Tech Stack & Links -->
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-4">Technologies</h3>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">React Native</span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">TypeScript</span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Firebase</span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Real-time Database</span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">UI/UX Design</span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Game Logic</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold text-white mb-4">Project Links</h3>
+                <div class="space-y-4">
+                  <a href="https://killerparty.app" target="_blank" class="group flex items-center gap-3 p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 border border-gray-700">
+                    <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-white font-semibold">Visit KillerParty</div>
+                      <div class="text-gray-400 text-sm">killerparty.app</div>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-transform duration-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  
+                  <!-- Apple Store Download Link -->
+                  <a href="https://apps.apple.com/fr/app/killerparty/id6468843961" target="_blank" class="group flex items-center gap-3 p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 border border-gray-700">
+                    <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <img src={appleStoreSvg.src} alt="Download on the App Store" class="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div class="text-white font-semibold">Download on App Store</div>
+                      <div class="text-gray-400 text-sm">Available for iOS</div>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-transform duration-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Other Projects Section -->
+      <section>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">More Projects</h2>
+          <p class="text-gray-600">Coming soon - more mobile applications and digital experiences</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Placeholder for future projects -->
+          <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center mb-4">
+              <span class="text-gray-500 text-2xl">🚀</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Project Coming Soon</h3>
+            <p class="text-gray-600">Stay tuned for more exciting mobile applications</p>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center mb-4">
+              <span class="text-gray-500 text-2xl">💡</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation in Progress</h3>
+            <p class="text-gray-600">Working on the next breakthrough mobile experience</p>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl flex items-center justify-center mb-4">
+              <span class="text-gray-500 text-2xl">🎯</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Future Vision</h3>
+            <p class="text-gray-600">Exploring new possibilities in mobile development</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

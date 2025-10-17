@@ -2,12 +2,18 @@
 interface Props {
   text: string;
   href: string;
+  variant?: 'primary' | 'secondary';
+  newTab?: boolean;
 }
 
-const { text, href } = Astro.props;
+const { text, href, variant = 'primary', newTab = false } = Astro.props;
 ---
 
-<a role="button" href={href} class="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white rounded-xl hover:from-gray-700 hover:via-gray-800 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-gray-900/30 hover:shadow-xl hover:shadow-gray-500/25 overflow-hidden border border-gray-700/50">
+<a role="button" href={href} target={newTab ? '_blank' : '_self'} class={`group relative inline-flex items-center gap-3 px-8 py-3 text-white rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl overflow-hidden ${
+  variant === 'secondary' 
+    ? 'bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 shadow-red-900/30 hover:shadow-red-500/25 border border-red-700/50' 
+    : 'bg-gradient-to-r from-gray-800 via-gray-900 to-black hover:from-gray-700 hover:via-gray-800 hover:to-gray-900 shadow-gray-900/30 hover:shadow-gray-500/25 border border-gray-700/50'
+}`}>
     <span class="relative z-10 flex items-center gap-2">
       {text}
     </span>
@@ -19,5 +25,9 @@ const { text, href } = Astro.props;
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
     
     <!-- Enhanced glow effect -->
-    <div class="absolute -inset-1 bg-gradient-to-r from-gray-600 via-gray-800 to-black rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+    <div class={`absolute -inset-1 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300 ${
+      variant === 'secondary' 
+        ? 'bg-gradient-to-r from-red-600 via-red-800 to-red-900' 
+        : 'bg-gradient-to-r from-gray-600 via-gray-800 to-black'
+    }`}></div>
 </a>

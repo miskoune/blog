@@ -21,6 +21,18 @@ const CANONICAL_URL  = new URL(Astro.url.pathname, Astro.site).href;
       <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
     </div>
-		<slot />
+    <main class="mb-16">
+      <div class="mx-4">
+      <header class=" max-w-2xl lg:max-w-xl mx-auto font-inter flex justify-end my-8 md:my-16">
+        <nav class="flex gap-4">
+          <a href="/">home</a>
+          <a href="/experience">xp</a>
+          <a href="/apps">apps</a>
+          <a href="/articles">writings</a>
+        </nav>
+      </header>
+		  <slot />
+      </div>
+    </main>
 	</body>
 </html>
