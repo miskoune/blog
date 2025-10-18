@@ -10,7 +10,7 @@ import Separator from '../components/Separator.astro';
     <div class="max-w-6xl mx-auto px-4">
 
       <!-- Page Title -->
-      <div class="text-center mb-16">
+      <div class="text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">apps</span>
         </h1>
@@ -144,12 +144,26 @@ import Separator from '../components/Separator.astro';
               <div>
                 <h3 class="text-2xl font-bold text-white mb-4">Tech stack</h3>
                 <div class="flex flex-wrap gap-3">
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">React Native</span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">TypeScript</span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Firebase</span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Real-time Database</span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">UI/UX Design</span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700">Game Logic</span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-blue-800/30 hover:text-blue-200 transition-all duration-300">
+                    <img src="/src/assets/icons/react.svg" alt="React Native" class="w-4 h-4" />
+                    React Native
+                  </span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-gray-800/30 hover:text-gray-200 transition-all duration-300">
+                    <img src="/src/assets/icons/symfony.png" alt="Symfony" class="w-4 h-4" />
+                    Symfony
+                  </span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-blue-800/30 hover:text-blue-200 transition-all duration-300">
+                    <img src="/src/assets/icons/typescript.svg" alt="TypeScript" class="w-4 h-4" />
+                    TypeScript
+                  </span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-purple-800/30 hover:text-purple-200 transition-all duration-300">
+                    <img src="/src/assets/icons/php.png" alt="PHP" class="w-4 h-4" />
+                    PHP
+                  </span>
+                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-blue-800/30 hover:text-blue-200 transition-all duration-300">
+                    <img src="/src/assets/icons/postgresql.png" alt="PostgreSQL" class="w-4 h-4" />
+                    PostgreSQL
+                  </span>
                 </div>
               </div>
 
