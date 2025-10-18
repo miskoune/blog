@@ -1,0 +1,26 @@
+---
+export interface Props {
+  name: string;
+  icon: string;
+  color?: 'blue' | 'purple' | 'gray' | 'green' | 'red' | 'yellow' | 'indigo' | 'pink';
+}
+
+const { name, icon, color = 'blue' } = Astro.props;
+
+// Color mapping for hover states
+const colorMap = {
+  blue: 'hover:bg-blue-800/30 hover:text-blue-200',
+  purple: 'hover:bg-purple-800/30 hover:text-purple-200',
+  gray: 'hover:bg-gray-800/30 hover:text-gray-200',
+  green: 'hover:bg-green-800/30 hover:text-green-200',
+  red: 'hover:bg-red-800/30 hover:text-red-200',
+  yellow: 'hover:bg-yellow-800/30 hover:text-yellow-200',
+  indigo: 'hover:bg-indigo-800/30 hover:text-indigo-200',
+  pink: 'hover:bg-pink-800/30 hover:text-pink-200'
+};
+---
+
+<span class={`px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 ${colorMap[color]} transition-all duration-300`}>
+  <img src={icon} alt={name} class="w-4 h-4" />
+  {name}
+</span>

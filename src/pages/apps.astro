@@ -4,6 +4,7 @@ import image1 from '../assets/images/image1.jpg';
 import image2 from '../assets/images/image2.jpg';
 import killerpartyLogo from '../assets/images/killerparty/killerparty-logo.png';
 import Separator from '../components/Separator.astro';
+import TechTag from '../components/TechTag.astro';
 import reactIcon from '../assets/icons/react.svg';
 import symfonyIcon from '../assets/icons/symfony.png';
 import typescriptIcon from '../assets/icons/typescript.svg';
@@ -12,15 +13,15 @@ import postgresqlIcon from '../assets/icons/postgresql.png';
 ---
 
 <Layout>
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
 
       <!-- Page Title -->
       <div class="text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">apps</span>
+          <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">applications</span>
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Last mobile apps I've worked on
+          Last applications I've worked on
         </p>
       </div>
 
@@ -38,7 +39,7 @@ import postgresqlIcon from '../assets/icons/postgresql.png';
             </div>
             
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-              <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">KillerParty</span>
+              <span class="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Killerparty</span>
             </h2>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto">
               Immersive survival game platform that brings mystery and intrigue to mobile gaming
@@ -108,12 +109,8 @@ import postgresqlIcon from '../assets/icons/postgresql.png';
               <div>
                 <h3 class="text-2xl font-bold text-white mb-4">About the Project</h3>
                 <p class="text-gray-300 leading-relaxed mb-4">
-                  KillerParty is an immersive mobile survival game that brings the classic "killer" party game to the digital world. 
+                  Killerparty is an immersive mobile survival game that brings the classic "killer" party game to the digital world. 
                   Players join private game rooms, complete missions, and try to eliminate others while avoiding detection.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                  The app features real-time multiplayer gameplay, custom avatars, mission systems, and a dark, atmospheric UI 
-                  that enhances the mysterious and thrilling experience.
                 </p>
               </div>
 
@@ -149,26 +146,11 @@ import postgresqlIcon from '../assets/icons/postgresql.png';
               <div>
                 <h3 class="text-2xl font-bold text-white mb-4">Tech stack</h3>
                 <div class="flex flex-wrap gap-3">
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-blue-800/30 hover:text-blue-200 transition-all duration-300">
-                    <img src={reactIcon.src} alt="React Native" class="w-4 h-4" />
-                    React Native
-                  </span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-gray-800/30 hover:text-gray-200 transition-all duration-300">
-                    <img src={symfonyIcon.src} alt="Symfony" class="w-4 h-4" />
-                    Symfony
-                  </span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-blue-800/30 hover:text-blue-200 transition-all duration-300">
-                    <img src={typescriptIcon.src} alt="TypeScript" class="w-4 h-4" />
-                    TypeScript
-                  </span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-purple-800/30 hover:text-purple-200 transition-all duration-300">
-                    <img src={phpIcon.src} alt="PHP" class="w-4 h-4" />
-                    PHP
-                  </span>
-                  <span class="px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 flex items-center gap-2 hover:bg-blue-800/30 hover:text-blue-200 transition-all duration-300">
-                    <img src={postgresqlIcon.src} alt="PostgreSQL" class="w-4 h-4" />
-                    PostgreSQL
-                  </span>
+                  <TechTag name="React Native" icon={reactIcon.src} color="blue" />
+                  <TechTag name="Symfony" icon={symfonyIcon.src} color="gray" />
+                  <TechTag name="TypeScript" icon={typescriptIcon.src} color="blue" />
+                  <TechTag name="PHP" icon={phpIcon.src} color="purple" />
+                  <TechTag name="PostgreSQL" icon={postgresqlIcon.src} color="blue" />
                 </div>
               </div>
 
